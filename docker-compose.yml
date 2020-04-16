@@ -93,7 +93,7 @@ services:
           - NVM_NODEJS_ORG_MIRROR=${WORKSPACE_NVM_NODEJS_ORG_MIRROR}
           - INSTALL_NODE=${WORKSPACE_INSTALL_NODE}
           - NPM_REGISTRY=${WORKSPACE_NPM_REGISTRY}
-          - NPM_FETCH_RETRIES=${WORKSPACE_NPM_FETCH_RETRIES} 
+          - NPM_FETCH_RETRIES=${WORKSPACE_NPM_FETCH_RETRIES}
           - NPM_FETCH_RETRY_FACTOR=${WORKSPACE_NPM_FETCH_RETRY_FACTOR}
           - NPM_FETCH_RETRY_MINTIMEOUT=${WORKSPACE_NPM_FETCH_RETRY_MINTIMEOUT}
           - NPM_FETCH_RETRY_MAXTIMEOUT=${WORKSPACE_NPM_FETCH_RETRY_MAXTIMEOUT}
@@ -536,7 +536,7 @@ services:
         args:
           - POSTGRES_VERSION=${POSTGRES_VERSION}
       volumes:
-        - ${DATA_PATH_HOST}/postgres:/var/lib/postgresql/data
+        - ${DATA_PATH_HOST}/postgres:/var/lib/postgresql
         - ${POSTGRES_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
       ports:
         - "${POSTGRES_PORT}:5432"
@@ -1886,7 +1886,7 @@ services:
         - "3000:3000"
       container_name: react
       stdin_open: true
-      environment: 
+      environment:
         - CHOKIDAR_USEPOLLING=true
       networks:
           - frontend
@@ -1894,4 +1894,3 @@ services:
       volumes:
         - ./react:/usr/src/app/react
         - /usr/src/app/react/node_modules
-

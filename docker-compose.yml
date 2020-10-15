@@ -57,7 +57,7 @@ volumes:
     driver: ${VOLUMES_DRIVER}
 
 services:
-
+      
 ### Workspace Utilities ##################################
     workspace:
       build:
@@ -325,6 +325,8 @@ services:
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
         - ./php-worker/supervisord.d:/etc/supervisord.d
+      ports:
+        - "6001:6001"
       depends_on:
         - workspace
       extra_hosts:

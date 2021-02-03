@@ -2,7 +2,7 @@
 #--------------------------------------------------------------------------
 # Image Setup
 #--------------------------------------------------------------------------
-#
+#cd
 # To edit the 'php-fpm' base Image, visit its repository on Github
 #    https://github.com/Laradock/php-fpm
 #
@@ -343,7 +343,7 @@ RUN if [ ${INSTALL_XHPROF} = true ]; then \
     # Install the php xhprof extension
     if [ $(php -r "echo PHP_MAJOR_VERSION;") = 7 ]; then \
       curl -L -o /tmp/xhprof.tar.gz "https://github.com/tideways/php-xhprof-extension/archive/v5.0.1.tar.gz"; \
-    else \ 
+    else \
       curl -L -o /tmp/xhprof.tar.gz "https://codeload.github.com/phacility/xhprof/tar.gz/master"; \
     fi \
     && mkdir -p xhprof \
@@ -913,7 +913,7 @@ RUN if [ ${INSTALL_WKHTMLTOPDF} = true ]; then \
     libx11-dev \
     libjpeg62 \
     libxtst6 \
-    fontconfig \ 
+    fontconfig \
     libjpeg62-turbo \
     xfonts-base \
     xfonts-75dpi \

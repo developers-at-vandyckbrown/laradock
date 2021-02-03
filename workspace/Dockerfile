@@ -1408,7 +1408,7 @@ RUN if [ ${INSTALL_WKHTMLTOPDF} = true ]; then \
    libx11-dev \
    libjpeg62 \
    libxtst6 \
-   fontconfig \
+   fontconfig \ 
    libjpeg-turbo8-dev \
    xfonts-base \
    xfonts-75dpi \
@@ -1596,4 +1596,3 @@ RUN apt-get clean && \
 
 # Set default work directory
 WORKDIR /var/www
-ENV APP_HOME /var/www
